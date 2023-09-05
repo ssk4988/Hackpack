@@ -4,4 +4,4 @@
 *.gch
 a.out
 header.tmp
-.vscode
+# .vscode
