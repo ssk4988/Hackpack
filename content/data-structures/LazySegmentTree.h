@@ -47,8 +47,7 @@ struct Node {
 			if (mset != inf) mset += x;
 			else madd += x;
 			val += x;
-		}
-		else {
+		} else {
 			push(), l->add(L, R, x), r->add(L, R, x);
 			val = max(l->val, r->val);
 		}
