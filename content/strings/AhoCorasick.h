@@ -5,6 +5,8 @@
  * Source: marian's (TC) code
  * Description: Aho-Corasick automaton, used for multiple pattern matching.
  * Initialize with AhoCorasick ac(patterns); the automaton start node will be at index 0.
+ * not necessarily true that nodes are sorted by depth, use a dfs.
+ * backp lists what word also ends at the same node, start is first word, end is last word ending there.
  * find(word) returns for each position the index of the longest word that ends there, or -1 if none.
  * findAll($-$, word) finds all words (up to $N \sqrt N$ many if no duplicate patterns)
  * that start at each position (shortest first).

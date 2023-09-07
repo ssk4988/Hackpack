@@ -1,10 +1,10 @@
 /**
  * Author: Jacob Steinebronn
  * Date: 2023-03-21
- * Description: Creates a DFA (DAG) that accepts all suffixes, with suffix links
- * One-to-one map between a path from the root and a substring
- * len is the longest-length substring ending here
- * pos is the first index in the string matching here
+ * Description: Creates a partial DFA (DAG) that accepts all suffixes, with suffix links.
+ * One-to-one map between a path from the root and a substring.
+ * len is the longest-length substring ending here.
+ * pos is the first index in the string matching here.
  * term is whether this node is a terminal (aka a suffix)
  * Time: construction takes $O(N\log K)$, where $K =$ Alphabet Size.
  * Status: works but not stress tested
