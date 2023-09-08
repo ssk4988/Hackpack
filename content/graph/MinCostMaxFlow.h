@@ -6,7 +6,7 @@
  *  If costs can be negative, call setpi before maxflow, but note that negative cost cycles are not supported.
  *  To obtain the actual flow, look at positive values only.
  * Status: Tested on kattis:mincostmaxflow, stress-tested against another implementation
- * Time: Approximately O(E^2)
+ * Time: Approximately $O(E^2)$, actually $O(FE\log V)$
  */
 #pragma once
 
