@@ -27,12 +27,14 @@ struct PST {
 	}
 	PST * add(int L, int R, ll v) {
 		if (R <= lo || hi <= L) return this;
-		PST *n = new PST(*this);
+		PST *n;
 		if (L <= lo && hi <= R) {
+			n = new PST(*this);
 			n->val += v;
 			n->lzadd += v;
 		} else {
 			push();
+			n = new PST(*this);
 			n->l = l->add(L, R, v);
 			n->r = r->add(L, R, v);
 		}
