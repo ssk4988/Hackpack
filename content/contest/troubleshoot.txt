@@ -1,7 +1,7 @@
 Pre-solution:
 Check understanding with samples, Find all corner cases
 If there is a lot of casework, see if there is another approach
-Don’t be afraid to write a bruteforcer and try to find a pattern
+Don't be afraid to write a bruteforcer and try to find a pattern
 Solve from end of problem and work backward
 What if we solve the opposite?
 Simplify/reduce problem
