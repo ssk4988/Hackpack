@@ -1,17 +1,14 @@
-# KACTL
+# Hackpack
 
-This repo hosts KACTL, [KTH](https://en.wikipedia.org/wiki/KTH_Royal_Institute_of_Technology)'s ICPC team reference document.
-It consists of 25 pages of copy-pasteable C++ code, for use in ICPC-style programming competitions.
+This repo is a 'hackpack' containing implementations of various algorithms and data structures in C++ for the purpose of ICPC Competitions. It is a fork of [KACTL](https://github.com/kth-competitive-programming/kactl) and has been customized to add more implementations and revise other ones. 
 
-See [kactl.pdf](./kactl.pdf) for the final, browsable version, and [content/](./content/) for raw source code.
+There is a build process using a Makefile and LaTeX to build a pdf of the code. See [kactl.pdf](./kactl.pdf) for the final, browsable version, and [content/](./content/) for raw source code.
 
 ## Aspirations
 
-KACTL algorithms should be: useful, short, fast enough, well tested, and if relevant, readable and easy to modify.
+Algorithms should be: useful, short, fast enough, well tested, and if relevant, readable and easy to modify.
 They should *not* be overly generic, since code is manually typed and that just adds overhead.
 Due to space issues, we also exclude algorithms that are very common/simple (e.g., Dijkstra), or very uncommon (general weighted matching).
-
-If you feel that something is missing, could be cleaned up, or notice a bug, please file an issue or [send a pull request](https://help.github.com/articles/fork-a-repo/)!
 
 ## Customizing KACTL
 
