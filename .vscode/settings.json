@@ -1,8 +1,16 @@
 {
     "files.eol": "\n",
     "files.associations": {
-        "vector": "cpp"
-    },
+		"vector": "cpp",
+		"array": "cpp",
+		"deque": "cpp",
+		"list": "cpp",
+		"string_view": "cpp",
+		"rope": "cpp",
+		"span": "cpp",
+		"chrono": "cpp",
+		"*.tcc": "cpp"
+	},
     "editor.insertSpaces": false,
     "editor.detectIndentation": false
 }
