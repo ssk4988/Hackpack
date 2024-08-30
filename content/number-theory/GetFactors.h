@@ -1,38 +1,16 @@
 /**
- * Author: Sachin Sivakumar
- * Date: 2023-09-04
- * Description: Generates all factors of a number
- * Time: $O(n^{1/3})$, or $O(\# factors)$ to be precise
- * Status: works but not stress-tested
+ * Author: Tyler Marks
+ * Description: Gets all factors of a number $N$ given the prime factorization of the number.
+ * Time: $O(\sqrt[3]{N})$
+ * Status: Tested
  */
-#pragma once
 
-#include "ModMulLL.h"
-#include "MillerRabin.h"
-#include "Factor.h"
-
-void genfactors(vi &pows, vi &es, vector<ull> &primes, ull cur, int idx, vector<ull> &res) {
-	res.pb(cur);
-	if(idx == sz(pows)) return;
-	for(int i = idx; i < sz(pows); i++) {
-		pows[i]++;
-		genfactors(pows, es, primes, cur * primes[i], i + (pows[i] >= es[i]), res);
-		pows[i]--;
+void getFactors(auto &pF, auto &primes, auto &factors, int i = 0, int n = 1) {
+	if(i == sz(pF)) {
+		factors.push_back(n);
+		return;
 	}
-}
 
-vector<ull> factorize(ull n) {
-	vector<ull> fs = factor(n);
-	map<ull, int> freq;
-	for(ull j : fs) freq[j]++;
-	vector<ull> primes;
-	vi es;
-	for(auto [prime, exp] : freq) {
-		primes.pb(prime);
-		es.pb(exp);
-	}
-	vi pows(sz(es));
-	vector<ull> res;
-	genfactors(pows, es, primes, 1, 0, res);
-	return res;
+	for(int j = 0, pow = 1; i <= pf[j]; j++, pow *= primes[j])
+		getFactors(pF, primes, factors, i+1, n * pow);
 }
