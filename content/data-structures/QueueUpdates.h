@@ -33,12 +33,10 @@ struct QueueUpdates {
         auto [r, t, u] = st.back();
         if (r) return void(rollback());
         array<vector<U>, 2> sq;
-        int diff = 0; // stack - queue
         do {
             tie(r, t, u) = rollback();
             sq[r].push_back(u);
-            diff += r ? -1 : 1;
-        } while (sz(st) && diff > 0);
+        } while (sz(st) && sz(sq[0]) > sz(sq[1]));
         if (sz(st) == 0) {
             for(auto &u : sq[0]) push(u, true); // turn all stack updates into queue updates
             sq[0].clear();
