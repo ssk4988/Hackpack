@@ -4,7 +4,7 @@
  * License: CC0
  * Source: https://codeforces.com/blog/entry/83467
  * Description: Allows updates to be processed like a queue where the earliest update is removed
- * Time: $O(T Q log Q)$, where T is the time complexity of an update
+ * Time: $O(TQ \log Q)$, where T is the time complexity of an update
  * Status: tested somewhat
  */
 #pragma once
