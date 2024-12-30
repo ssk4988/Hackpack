@@ -16,16 +16,17 @@ struct PST {
 		if (lo + 1 < hi) {
 			int mid = lo + (hi - lo)/2;
 			l = new PST(v, lo, mid); r = new PST(v, mid, hi);
+			val = l->val + r->val;
 		}
 		else val = v[lo];
 	}
 	ll query(int L, int R) {
-		if (R < lo || hi < L) return 0; // idempotent
+		if (R <= lo || hi <= L) return 0; // idempotent
 		if (L <= lo && hi <= R) return val;
 		push();
 		return l->query(L, R) + r->query(L, R);
 	}
-	PST * add(int L, int R, ll v) {
+	PST* add(int L, int R, ll v) {
 		if (R <= lo || hi <= L) return this;
 		PST *n;
 		if (L <= lo && hi <= R) {
@@ -37,6 +38,7 @@ struct PST {
 			n = new PST(*this);
 			n->l = l->add(L, R, v);
 			n->r = r->add(L, R, v);
+			n->val = n->l->val + n->r->val;
 		}
 		return n;
 	}
